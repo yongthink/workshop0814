@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Oversea</title>
+		<!-- D3 ADD -->
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+		<style type="text/css">
+		  body {
+		    background-color: #000000
+		  }
+		  h1 { 
+		    color: #ffffff
+		  }
+		</style>
+	</head>
+	<body>
+		<H1>Example</H1>
+		<script> 
+		  //Width and height
+		  var w = 600;
+		  var h = 800;
+
+		  //Define map projection
+		  var projection = d3.geoMercator()
+		    .center([ 127, 38 ])
+		    .translate([ w/2, h/2 ])
+		    .scale([ w/4 ]);
+
+		  //Define path generator
+		  var path = d3.geoPath()
+		    .projection(projection);
+
+		  //Create SVG
+		  var svg = d3.select("body")
+		    .append("svg")
+		    .attr("width", w)
+		    .attr("height", h);
+
+		    var layerWorld = svg.append('g');
+
+			//Load in GeoJSON data
+			d3.json("world.geojson", function(json) {
+			  //Bind data and create one path per GeoJSON feature
+			  layerWorld.selectAll("path")
+			           .data(json.features)
+			           .enter()
+			           .append("path")
+			           .attr("d", path)
+			           .style("fill", "#313030")
+			           .style("stroke", "#5a5959")
+			           .on("mouseover", handleMouseOver)
+			           .on("mouseout", handleMouseOut);
+			}); 
+
+			// Create Event Handlers for mouse
+function handleMouseOver(d, i) {  // Add interactivity
+// Use D3 to select element, change color 
+  d3.select(this)
+    .style("fill", "orange");
+};
+function handleMouseOut(d, i) {
+// Use D3 to select element, change color back to normal
+  d3.select(this)
+    .style("fill", "#313030")
+};
+		</script>
+	</body>
+</html>

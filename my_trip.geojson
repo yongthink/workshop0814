@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+	{ "type": "Feature", "properties": { "name": "Incheon International Airport", "description": "Incheon International Airport", "timestamp": "2017\/08\/13 16:45:00"}, "geometry": { "type": "Point", "coordinates": [ 126.44069, 37.46019, 100.0 ] } },
+	{ "type": "Feature", "properties": { "name": "San Francisco International Airport", "description": "San Francisco International Airport", "timestamp": "2017\/08\/13 13:30:00"}, "geometry": { "type": "Point", "coordinates": [ -122.37895, 37.62131, 100.0 ] } },
+	{ "type": "Feature", "properties": { "name": "Boston-Logan International Airport", "description": "Boston-Logan International Airport", "timestamp": "2017\/08\/13 21:56:00"}, "geometry": { "type": "Point", "coordinates": [ -71.00956, 42.36561, 100.0 ] } },
+	{ "type": "Feature", "properties": { "name": "Newark Liberty International Airport", "description": "Newark Liberty International Airport", "timestamp": "2017\/08\/19 06:35:00"}, "geometry": { "type": "Point", "coordinates": [ -74.17446, 40.68953, 100.0 ] } }
+]
+}
